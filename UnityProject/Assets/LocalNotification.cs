@@ -40,7 +40,7 @@ public class LocalNotification
         notification.alertBody = message;
         notification.alertAction = title;
         notification.hasAction = false;
-
+        notificationIntent.putExtra("id",id);
         UnityEngine.iOS.NotificationServices.ScheduleLocalNotification(notification);
 
         return (int)fireDate.Ticks;
